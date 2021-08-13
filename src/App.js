@@ -6,11 +6,10 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Router>
         <div className="app-body">
           <Switch>
@@ -23,7 +22,6 @@ function App() {
           </Switch>
         </div>
       </Router>
-      <WebcamCapture />
     </div>
   );
 }

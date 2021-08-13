@@ -3,7 +3,8 @@ import React,{useRef, useCallback} from 'react'
 import Webcam from 'react-webcam';
 import {useDispatch} from "react-redux"
 import { setCameraImage } from './features/cameraSlice';
-
+import { useHistory } from 'react-router';
+import "./WebcamCapture.css"
 
 const videoConstraiants = {
     width: 250,
@@ -13,11 +14,13 @@ const videoConstraiants = {
 
 
 function WebcamCapture() {
-    const webcamRef = useRef(null)
-    const dispatch = useDispatch()
+    const webcamRef = useRef(null);
+    const dispatch = useDispatch();
+    const history = useHistory()
     const capture = useCallback(() => {
         const imageSrc =webcamRef.current.getScreenshot();
         dispatch(setCameraImage(imageSrc))
+        history.push("/preview")
     },[webcamRef])
     return (
         <div className="webcamCapture">
