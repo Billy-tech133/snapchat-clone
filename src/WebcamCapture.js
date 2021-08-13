@@ -18,7 +18,7 @@ function WebcamCapture() {
     const dispatch = useDispatch();
     const history = useHistory()
     const capture = useCallback(() => {
-        const imageSrc =webcamRef.current.getScreenshot();
+        const imageSrc = webcamRef.current.getScreenshot();
         dispatch(setCameraImage(imageSrc))
         history.push("/preview")
     },[webcamRef])
