@@ -21,7 +21,6 @@ function Chats() {
   }, []);
   return (
     <div className="chats">
-      ,
       <div className="chats-header">
         <Avatar className="chats-avatar" />
         <div className="chats-search">
@@ -31,18 +30,24 @@ function Chats() {
         <ChatBubble className="chats-chatIcon" />
       </div>
       <div className="chat-posts">
-        {posts.map(({ id, data: { username, timestamp, imageUrl, read } }) => {
-          return (
-            <Chat
-              key={id}
-              id={id}
-              username={username}
-              timestamp={timestamp}
-              imageUrl={imageUrl}
-              read={read}
-            />
-          );
-        })}
+        {posts.map(
+          ({
+            id,
+            data: { profilePic, username, timestamp, imageUrl, read },
+          }) => {
+            return (
+              <Chat
+                key={id}
+                id={id}
+                username={username}
+                timestamp={timestamp}
+                imageUrl={imageUrl}
+                read={read}
+                profilePic={profilePic}
+              />
+            );
+          }
+        )}
       </div>
     </div>
   );
