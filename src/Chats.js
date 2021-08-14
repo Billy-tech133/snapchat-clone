@@ -8,12 +8,15 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { selectUser } from "./features/appSlice";
 import { useHistory } from "react-router";
+import { resetCameraImage } from "./features/cameraSlice";
+
 function Chats() {
   const [posts, setPosts] = useState([]);
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
   const history = useHistory();
   const takeSnap = () => {
+    dispatch(resetCameraImage());
     history.push("/");
   };
   useEffect(() => {

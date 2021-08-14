@@ -6,3 +6,18 @@
   background-color: #fefc01;
   height: 100vh;
 }
+.app-body {
+  background: url("https://bit.ly/2VPcEZQ") no-repeat center;
+  background-size: contain;
+  height: 400px;
+  width: 250px;
+  padding: 74px;
+}
+.app-bodyBackground {
+  background-color: white;
+  height: 400px;
+}
+.app-logo {
+  object-fit: contain;
+  height: 100px;
+}
